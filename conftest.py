@@ -17,4 +17,9 @@ def setup(page: Page):
     page.get_by_role("textbox", name="Contraseña").fill(CONTRASEÑA)
     page.get_by_role("button", name="Ingresar").click()
     
+    #Cerrar Pop Ups iniciales
+    page.locator("ch-ui-widget-generic-modal").get_by_role("button", name="Entendido").click()
+    page.locator("app-modal-alert").get_by_text("Entendido").click()
+    page.get_by_role("button", name="Entendido").click()
+    
     yield
