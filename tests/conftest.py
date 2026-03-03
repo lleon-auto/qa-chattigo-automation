@@ -2,8 +2,8 @@ import pytest
 from playwright.sync_api import Page
 
 URL = "https://qa-pantera.chattigo.com/login/pages/login"
-USUARIO = "BOT Prueba Publicador"
-CONTRASEÑA = "Admin1234"
+USUARIO = "auto-bot@pantera.com"
+CONTRASEÑA = "auto-bot@pantera.com"
 
 @pytest.fixture(autouse=True)
 def setup(page: Page):
@@ -30,5 +30,7 @@ def setup(page: Page):
         page.get_by_role("button", name="Entendido").click(timeout=3000)
     except:
         pass
+
+    print ("Inicio exitoso")
 
     yield
